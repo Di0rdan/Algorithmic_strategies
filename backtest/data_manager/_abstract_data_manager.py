@@ -5,4 +5,3 @@ class AbstractDataManager:
 
     def get(self, time):
         pass
-
