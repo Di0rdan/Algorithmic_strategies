@@ -3,8 +3,8 @@ class AbstractMetric:
     def __init__(self):
         pass
 
-    def update(self, time, real, predicted):
+    def update(self, timestamp, real, predicted):
         pass
 
-    def get(self, time):
+    def get(self):
         pass

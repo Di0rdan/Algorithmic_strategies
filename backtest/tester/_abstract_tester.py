@@ -1,10 +1,11 @@
+from .. import make_timestamp
+
+
 class AbstractTester:
 
-    def __init__(self, model, stock_exchange, ticker, time_period, hist_period, freq, metric):
-        pass
-
-    def start(self):
+    def _step(self, timestamp, *args, **kwargs):
         raise NotImplementedError
 
-    def get_metric(self):
-        raise NotImplementedError
+    def _run(self, start: int, finish: int, tick_size, *args, **kwargs):
+        for timestamp in range(start, finish, tick_size):
+            self._step(timestamp, *args, **kwargs)
