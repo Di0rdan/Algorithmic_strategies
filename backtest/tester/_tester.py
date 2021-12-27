@@ -34,7 +34,7 @@ class Tester(AbstractTester):
 
         if start > finish:
             raise ValueError(f"start > finish: {start} > {finish}")
-        if finish - start > historical_period:
+        if finish - start < historical_period:
             raise ValueError(f"historical period too large")
 
         self._run(start, start + historical_period, frequency, metrick_mode='off')

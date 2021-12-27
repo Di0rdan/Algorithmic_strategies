@@ -12,7 +12,7 @@ def make_timestamp(timestamp):
         return numpy_datetime(timestamp).tolist().timestamp()
     except:
         pass
-    if timestamp is str:
+    if type(timestamp) is str:
         if timestamp in ['millisecond', 'ms']:
             return 1
         elif timestamp in ['second', 'sec', 's']:
